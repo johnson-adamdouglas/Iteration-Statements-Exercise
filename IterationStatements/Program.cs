@@ -42,8 +42,6 @@ namespace IterationStatements
 
         public static void EqualCheck(int num1, int num2)
         {
-            num1 = 5;
-            num2 = 6;
             var check = (num1 == num2) ? "equal" : "not equal";
             Console.WriteLine(check);
         }
@@ -60,10 +58,23 @@ namespace IterationStatements
             Console.WriteLine(check);
         }
 
-        public static void AgeCheck(int num6)
+        public static void AgeCheck()
         {
-            var check = (num6 >= 18) ? "You can vote" : "You can't vote";
-            Console.WriteLine(check);
+            // var check = (num6 >= 18) ? "You can vote" : "You can't vote";
+            //Console.WriteLine(check);
+            bool userAge;
+            int result;
+
+            do
+            {
+                Console.WriteLine("Please enter your age:");
+                userAge = int.TryParse(Console.ReadLine(), out result);
+            }while(!userAge);
+            if(result >= 18)
+            {
+                Console.WriteLine("You can vote");
+            }
+            else Console.WriteLine("You can't vote");
         }
 
         public static void IntBetween(int num7)
@@ -87,33 +98,34 @@ namespace IterationStatements
         static void Main(string[] args)
         {
             //Write a method that will print to the console all numbers 1000 through - 1000
-            Count();
-            Count2();
+            //Count();
+            //Count2();
 
             //Write a method that will print to the console numbers 3 through 999 by 3 each time
-            CountBy3();
+            //CountBy3();
 
             //Write a method to accept two integers as parameterss and check whether they are equal or not
-            Console.WriteLine("Type a number");
-            var num1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Type another number");
-            var num2 = int.Parse(Console.ReadLine());
-            EqualCheck(num1, num2);
+            //Console.WriteLine("Type a number");
+            //var num1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Type another number");
+            //var num2 = int.Parse(Console.ReadLine());
+            //EqualCheck(5, 3);
 
             //Write a method to check whether a given number is even or odd
-            Console.WriteLine("Type a number");
-            var num = int.Parse(Console.ReadLine());
-            EvenIntCheck(num);
+            //Console.WriteLine("Type a number");
+            //var num = int.Parse(Console.ReadLine());
+            //EvenIntCheck(num);
+            
 
             //Write a method to check whether a given number is positive or negative
-            Console.WriteLine("Type a number");
-            var num5 = int.Parse(Console.ReadLine());
-            PosNumCheck(num5);
+            //Console.WriteLine("Type a number");
+            //var num5 = int.Parse(Console.ReadLine());
+            //PosNumCheck(num5);
 
             //Write a method to read the age of a candidate and determine whether they can vote.
-            Console.WriteLine("What is your age?");
-            var num6 = int.Parse(Console.ReadLine());
-            AgeCheck(num6);
+            //Console.WriteLine("What is your age?");
+            //var num6 = int.Parse(Console.ReadLine());
+            AgeCheck();
 
             //Write a method to check if an integer (from the user) is in the range -10 to 10
             Console.WriteLine("Type a number to see if it is between -10 and 10");
